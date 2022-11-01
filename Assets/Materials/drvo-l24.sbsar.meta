@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a85e249658e48b446b6bbb30fa9fc5cf
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: ebcbaa665a720d44ba58f75ee439ea78, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Materials/drvo-l24.sbsar

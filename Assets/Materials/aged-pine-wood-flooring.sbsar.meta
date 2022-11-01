@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e7ed43973fef97d47a61f3c4fe3a278d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: e2616d27176546444a6a7b1a0b810f35, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Materials/aged-pine-wood-flooring.sbsar

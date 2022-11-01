@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4c5353d1387ab60408e4ddc7aae80543
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 0e1730816c591d145a840f99576e2933, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/Materials/american_brown_walnut_crown_cut.sbsar
