@@ -7,11 +7,11 @@
     "computer_bedroom":"My old computer. It's a real piece of junk.",
     "dresser_bedroom_A":"My dresser. I keep forgetting to close these drawers...",
     "dresser_bedroom_B":"My dresser. I've closed the open drawers.",
-    "closet_bedroom":"&y/n |My closet. There's something shiny sitting on it. Take it?",
+    "closet_bedroom":"&y/n|My closet. There's something shiny sitting on it. Take it?",
     "closet_bedroom_yes":"&interact",
-    "door_bedroom_A":"&instant &y/n |Leave your bedroom and go in the hallway?",
-    "door_bedroom_A_yes":"&instant |The door is blocked.=>Huh. That's weird...=>&instant &y/n |Look through the peephole?",
-    "door_bedroom_A_yes_yes":"&instant |You look through the peephole...",
+    "door_bedroom_A":"&instant|&y/n|Leave your bedroom and go in the hallway?",
+    "door_bedroom_A_yes":"{&instant|The door is blocked.=>Huh. That's weird...}{&instant|&y/n|Look through the peephole?}",
+    "door_bedroom_A_yes_yes":"&instant|You look through the peephole...",
     "event_leave_peephole_from_bedroom_A":"What the hell?",
     
     "__COMMENT-02":"Bedroom 2"
