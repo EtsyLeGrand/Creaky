@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject eyes;
     private Vector3 velocity;
     [SerializeField] private float speed = 2f;
-    [SerializeField] private float jump = 10f;
     [SerializeField] private float gravity = -9.8f;
 
     // Mouse look variables

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Prop : MonoBehaviour
+public class Inspectable : MonoBehaviour
 {
-     string propName = default;
+    [SerializeField] private string key;
 }
