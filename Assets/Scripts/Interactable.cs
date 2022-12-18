@@ -1,21 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Inspectable))]
 public class Interactable : MonoBehaviour
 {
-    private void Awake()
-    {
-        
-    }
+    [SerializeField] private bool requiresInspection = false;
+    [SerializeField] private bool destroyOnUse = true;
+    [SerializeField] private InteractableBase interactable;
+
+    private bool wasInspected = false;
+    private Inspectable inspectable;
+
+    public bool WasInspected { set => wasInspected = value; }
 
     private void Start()
     {
-        
+        inspectable = GetComponent<Inspectable>();
     }
 
-    private void Update()
+    public void Interact()
     {
-        
+        if (CanBeInteracted())
+        {
+            ChangeInspectKey();
+            interactable.Interact();
+
+            if (destroyOnUse) Destroy(this);
+        }
+    }
+
+    private void ChangeInspectKey()
+    {
+        char lastChar = inspectable.Key[inspectable.Key.Length - 1];
+        if (int.TryParse(lastChar.ToString(), out int numberId))
+        {
+            numberId++;
+            inspectable.Key = inspectable.Key.Remove(inspectable.Key.Length - 1) + numberId;
+        }
+    }
+
+    public bool CanBeInteracted()
+    {
+        return (!requiresInspection || wasInspected);
     }
 }

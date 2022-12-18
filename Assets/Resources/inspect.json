@@ -4,15 +4,16 @@
 
     "__COMMENT-01":"Bedroom 1",
 
-    "computer_bedroom":"My old computer. It's a real piece of junk.",
-    "dresser_bedroom_A":"My dresser. I keep forgetting to close these drawers...",
-    "dresser_bedroom_B":"My dresser. I've closed the open drawers.",
-    "closet_bedroom":"&y/n|My closet. There's something shiny sitting on it. Take it?",
-    "closet_bedroom_yes":"&interact",
-    "door_bedroom_A":"&instant|&y/n|Leave your bedroom and go in the hallway?",
-    "door_bedroom_A_yes":"{&instant|The door is blocked.=>Huh. That's weird...}{&instant|&y/n|Look through the peephole?}",
-    "door_bedroom_A_yes_yes":"&instant|You look through the peephole...",
-    "event_leave_peephole_from_bedroom_A":"What the hell?",
+    "initial_room_monitor":"My old computer. It's a real piece of junk.",
+    "initial_room_drawer_1":"I keep forgetting to close this drawer...",
+    "initial_room_drawer_2":"I've closed the open drawer.",
+    "initial_room_closet_1":"My closet. There's something shiny sitting in it.",
+    "initial_room_closet_2":"My closet. I've already picked up the key.",
+    "initial_room_door_1":"The door is blocked. Huh. That's weird... I guess I could look through the peephole.",
+    "initial_room_plate":"I should probably clean this up. Eh, another time.",
+    "initial_room_blinds":"There seems to be a storm outside...",
+    "initial_room_bed":"I'm not tired for some reason.",
+    "initial_room_lightswitch":"That opens up the light in my room.",
     
     "__COMMENT-02":"Bedroom 2"
 }
