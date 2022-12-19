@@ -7,5 +7,6 @@ public class InitialRoomDrawer : InteractableBase
     public override void Interact()
     {
         GetComponent<Animator>().Play("closepush_01");
+        GetComponent<AudioSource>().Play();
     }
 }

@@ -14,6 +14,7 @@ public class Interactable : MonoBehaviour
     private Inspectable inspectable;
 
     public bool WasInspected { set => wasInspected = value; }
+    public bool DestroyOnUse { get => destroyOnUse; }
 
     private void Start()
     {

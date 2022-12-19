@@ -8,5 +8,6 @@ public class InitialRoomCloset : InteractableBase
     {
         ProgressManager.AddToInventory(ProgressManager.Item.GoldenKey);
         DialogueManager.DisplayMessage("A [Golden Key]? What does it even open?");
+        GetComponent<AudioSource>().Play();
     }
 }

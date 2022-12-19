@@ -7,5 +7,6 @@ public class InitialRoomLightswitch : InteractableBase
     public override void Interact()
     {
         DialogueManager.DisplayMessage("... Nothing happened.");
+        GetComponent<AudioSource>().Play();
     }
 }

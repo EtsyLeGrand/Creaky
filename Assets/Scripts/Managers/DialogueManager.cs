@@ -13,27 +13,28 @@ public class DialogueManager : Singleton<DialogueManager>
 
     private static float timer;
     private static bool isMessageActive = false;
+    private static float customMinDisplayTime = -1.0f;
 
     [SerializeField] private PlayerController playerController;
-
-    private void Start()
-    {
-        DisplayMessage("My old computer. It's a real piece of junk.");
-    }
 
     private void Update()
     {
         if (isMessageActive)
         {
             timer += Time.deltaTime;
-            if (timer >= Instance.minDisplayTime && (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f))
+            float tempMinDisplayTime = minDisplayTime;
+
+            if (HasCustomMinDisplayTime())
             {
-                HideMessage();
+                tempMinDisplayTime = customMinDisplayTime;
             }
 
-            if (timer >= Instance.displayTime)
+            if ((timer >= tempMinDisplayTime && (Input.GetAxis("Horizontal") != 0f || Input.GetAxis("Vertical") != 0f)) 
+                || timer >= Instance.displayTime 
+                || Input.GetKeyDown(KeyCode.Space))
             {
                 HideMessage();
+                customMinDisplayTime = -1.0f;
             }
         }
     }
@@ -47,10 +48,21 @@ public class DialogueManager : Singleton<DialogueManager>
         Instance.messageText.text = message;
     }
 
+    public static void DisplayMessage(string message, float customMin)
+    {
+        DisplayMessage(message);
+        customMinDisplayTime = customMin;
+    }
+
     private static void HideMessage()
     {
         isMessageActive = false;
         Instance.dialogueCanvas.SetActive(false);
         Instance.playerController.Unlock();
+    }
+
+    private static bool HasCustomMinDisplayTime()
+    {
+        return customMinDisplayTime != -1.0f;
     }
 }

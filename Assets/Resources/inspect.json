@@ -1,8 +1,9 @@
 {
     "__COMMENT-00":"Global",
     "event_three_dots":"...",
+    "event_door_blocked":"It's blocked.",
 
-    "__COMMENT-01":"Bedroom 1",
+    "__COMMENT-01":"Initial room",
 
     "initial_room_monitor":"My old computer. It's a real piece of junk.",
     "initial_room_drawer_1":"I keep forgetting to close this drawer...",
@@ -10,10 +11,14 @@
     "initial_room_closet_1":"My closet. There's something shiny sitting in it.",
     "initial_room_closet_2":"My closet. I've already picked up the key.",
     "initial_room_door_1":"The door is blocked. Huh. That's weird... I guess I could look through the peephole.",
+    "initial_room_door_2":"Nothing out of the ordinary...",
+    "initial_room_door_knocked":"What was that knocking?",
     "initial_room_plate":"I should probably clean this up. Eh, another time.",
     "initial_room_blinds":"There seems to be a storm outside...",
     "initial_room_bed":"I'm not tired for some reason.",
     "initial_room_lightswitch":"That opens up the light in my room.",
     
-    "__COMMENT-02":"Bedroom 2"
+    "__COMMENT-02":"Second Room",
+    "second_room_bed":"Is that... My bed?",
+    "second_room_closet":"My... closet? What's even going on here?"
 }

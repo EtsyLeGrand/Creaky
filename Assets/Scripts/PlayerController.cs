@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
     [SerializeField] private GameObject eyes;
+    [SerializeField] private PlayerFeet feet;
     private GameObject currentWatchedObject;
 
     [Header("Movement")]
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 1.5f;
     [SerializeField] private float sprintSpeed = 1.5f;
     [SerializeField] private float gravity = -9.8f;
+    [SerializeField] private float distanceBeforeCreak = 10.0f;
+    private float walkedDistance = 0.0f;
 
     [Header("Mouse look")]
     [SerializeField] private float mouseSensitivity = 100.0f;
@@ -30,6 +33,8 @@ public class PlayerController : MonoBehaviour
     private float yaw = 0.0f; // rotation around the right/x axis
 
     private bool isLocked = false;
+
+    public GameObject Eyes { get => eyes; }
 
     private void Start()
     {
@@ -61,6 +66,7 @@ public class PlayerController : MonoBehaviour
                 float vertical = Input.GetAxisRaw("Vertical") * sprintSpeed;
                 Vector3 move = transform.right * horizontal + transform.forward * vertical;
                 characterController.Move(sprintSpeed * Time.deltaTime * move);
+                walkedDistance += sprintSpeed * Time.deltaTime * move.magnitude;
             }
             else
             {
@@ -68,6 +74,7 @@ public class PlayerController : MonoBehaviour
                 float vertical = Input.GetAxisRaw("Vertical") * speed;
                 Vector3 move = transform.right * horizontal + transform.forward * vertical;
                 characterController.Move(speed * Time.deltaTime * move);
+                walkedDistance += sprintSpeed * Time.deltaTime * move.magnitude;
             }
             #endregion
 
@@ -97,9 +104,16 @@ public class PlayerController : MonoBehaviour
                 {
                     interactable.Interact();
                     currentWatchedObject = null;
-                    LookForInteractableInspectable();
-                    // Bug, des fois l'indicateur d'interact pop quand même
+                    if (interactable.DestroyOnUse) EventManager.TriggerEvent("OnNotLookingAtInteractable", new Dictionary<string, object>());
                 }
+            }
+            #endregion
+
+            #region Creak
+            if (walkedDistance >= distanceBeforeCreak)
+            {
+                walkedDistance = 0.0f;
+                feet.Step();
             }
             #endregion
         }
