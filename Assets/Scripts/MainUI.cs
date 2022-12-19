@@ -9,8 +9,6 @@ public class MainUI : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
-
         EventManager.StartListening("OnLookingAtInspectable", OnLookingAtInspectable);
         EventManager.StartListening("OnNotLookingAtInspectable", OnNotLookingAtInspectable);
 
