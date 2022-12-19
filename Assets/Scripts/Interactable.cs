@@ -42,6 +42,16 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    public void RevertInspectKey()
+    {
+        char lastChar = inspectable.Key[inspectable.Key.Length - 1];
+        if (int.TryParse(lastChar.ToString(), out int numberId))
+        {
+            numberId--;
+            inspectable.Key = inspectable.Key.Remove(inspectable.Key.Length - 1) + numberId;
+        }
+    }
+
     public bool CanBeInteracted()
     {
         return (!requiresInspection || wasInspected);

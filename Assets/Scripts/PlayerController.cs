@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    private void LookForInteractableInspectable()
+    public void LookForInteractableInspectable()
     {
         RaycastHit hit;
         if (Physics.Raycast(eyes.transform.position, eyes.transform.forward, out hit, maxRaycastDistance, ignoredMask))

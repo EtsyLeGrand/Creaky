@@ -7,6 +7,9 @@ public class ProgressManager : Singleton<ProgressManager>
     public enum Item
     {
         GoldenKey,
+        Axe,
+        Crowbar,
+        OvenMitts
     }
     private static List<Item> inventory = new List<Item>();
     [SerializeField] public GameObject player;
@@ -63,6 +66,7 @@ public class ProgressManager : Singleton<ProgressManager>
         Destroy(Instance.currentRapax);
         Destroy(Instance.currentRoom);
         Instance.currentRoom = Instantiate(Instance.rooms[Instance.currentRoomIndex], Vector3.zero, Quaternion.identity);
+        Instance.player.GetComponent<PlayerController>().LookForInteractableInspectable();
     }
 
     private void LeftFirstPeepholeEvent(Dictionary<string, object> args)

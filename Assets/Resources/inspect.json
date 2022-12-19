@@ -20,5 +20,19 @@
     
     "__COMMENT-02":"Second Room",
     "second_room_bed":"Is that... My bed?",
-    "second_room_closet":"My... closet? What's even going on here?"
+    "second_room_closet":"My... closet? What's even going on here?",
+
+    "__COMMENT-03":"Fourth Room",
+    "fourth_room_door":"I definitely don't want to go that way!",
+    "fourth_room_exit_door":"It's locked. I need to break it down, and quickly!",
+    "fourth_room_sink_1":"Is that... Acid? I need something for my hands.",
+    "fourth_room_sink_2":"I've picked up the crowbar.",
+    "fourth_room_oven_1":"There's something inside...",
+    "fourth_room_oven_2":"I've picked up the oven mitts.",
+    "fourth_room_dresser_small":"A floating dresser. It's empty.",
+    "fourth_room_bed":"Didn't I just see my bed? What's going on here?",
+    "fourth_room_dresser_1":"It's locked.",
+    "fourth_room_dresser_2":"I've unlocked the dresser.",
+    "fourth_room_fridge_1":"A fridge. It's stuck!",
+    "fourth_room_fridge_2":"I've unstuck the fridge."
 }
