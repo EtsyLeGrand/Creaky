@@ -43,6 +43,9 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
 
         ignoredMask = 1 << LayerMask.NameToLayer("Prop");
+
+        GetComponent<Animator>().Play("Intro");
+        isLocked = true;
     }
 
     void Update()
@@ -202,5 +205,11 @@ public class PlayerController : MonoBehaviour
     public void Unlock()
     {
         isLocked = false;
+    }
+
+    public void AfterIntro()
+    {
+        Unlock();
+        Destroy(GetComponent<Animator>());
     }
 }

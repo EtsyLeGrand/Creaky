@@ -46,4 +46,9 @@ public class Interactable : MonoBehaviour
     {
         return (!requiresInspection || wasInspected);
     }
+
+    public void SetInteractable(InteractableBase itrct)
+    {
+        interactable = itrct;
+    }
 }

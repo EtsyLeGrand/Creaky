@@ -9,6 +9,7 @@ public class RoomChangerTrigger : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             ProgressManager.NextRoom();
+            EventManager.TriggerEvent("OnEnterThirdRoom", new Dictionary<string, object>());
         }
     }
 }

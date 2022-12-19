@@ -9,11 +9,12 @@ public class ProgressManager : Singleton<ProgressManager>
         GoldenKey,
     }
     private static List<Item> inventory = new List<Item>();
+    [SerializeField] public GameObject player;
     [SerializeField] private GameObject darkRapax;
     [SerializeField] private List<GameObject> rooms;
     private GameObject currentRoom;
     private int currentRoomIndex = 0;
-    private GameObject currentRapax;
+    public GameObject currentRapax;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class ProgressManager : Singleton<ProgressManager>
         EventManager.StartListening("LeftFirstPeepholeEvent", LeftFirstPeepholeEvent);
         EventManager.StartListening("EnteredFirstPeepholeSecondTimeEvent", EnteredFirstPeepholeSecondTimeEvent);
         EventManager.StartListening("LeftFirstPeepholeSecondTimeEvent", LeftFirstPeepholeSecondTimeEvent);
+        EventManager.StartListening("OnEnterThirdRoom", OnEnterThirdRoom);
     }
 
     private void Update()
@@ -95,11 +97,18 @@ public class ProgressManager : Singleton<ProgressManager>
         StartCoroutine(LeftFirstPeepholeSecondTimeEventCoroutine());
         
     }
-
     private IEnumerator LeftFirstPeepholeSecondTimeEventCoroutine()
     {
         while (TransitionManager.FadingIn) { yield return null; }
 
         NextRoom();
+        yield return null;
+    }
+
+    private void OnEnterThirdRoom(Dictionary<string, object> args)
+    {
+        currentRapax = Instantiate(darkRapax, new Vector3(-25.17f, 1.4f, -25.27f), Quaternion.Euler(0, 180, 0));
+        currentRapax.GetComponent<Animator>().Play("IdleLookAround");
+        currentRapax.GetComponent<RapaxController>().AmbiantNoises();
     }
 }
